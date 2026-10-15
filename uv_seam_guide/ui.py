@@ -225,6 +225,8 @@ def draw_symmetry_rebuild_tools(layout, props):
     op = row.operator("ac9_cloth.symmetrize_island", text="Self",
                       icon='MOD_MIRROR')
     op.axis = props.self_axis
+    row.operator("ac9_cloth.instance_island", text="Instance",
+                 icon='DUPLICATE')
     row = uic.labeled_row(col, "Self axis")
     row.prop(props, "self_axis", text="")
 

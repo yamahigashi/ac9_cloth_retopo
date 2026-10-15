@@ -8,16 +8,19 @@ if "properties" in dir():
     import importlib
     from . import (analysis, anchor_segments, connect_rows, ghost, gpu_overlay,
                    panel_regions, patch_grid, preview_fill, properties, operators,
-                   retopo_seam_sync, span_density, topology_corner, ui)
+                   retopo_seam_sync, span_density, topology_corner, ui,
+                   instance_island)
     for _mod in (analysis, anchor_segments, connect_rows, ghost, gpu_overlay,
                  panel_regions, patch_grid, preview_fill, properties, operators,
-                 retopo_seam_sync, span_density, topology_corner, ui):
+                 retopo_seam_sync, span_density, topology_corner, ui,
+                 instance_island):
         importlib.reload(_mod)
     del _mod
 else:
     from . import (analysis, anchor_segments, connect_rows, ghost, gpu_overlay,
                    panel_regions, patch_grid, preview_fill, properties, operators,
-                   retopo_seam_sync, span_density, topology_corner, ui)
+                   retopo_seam_sync, span_density, topology_corner, ui,
+                   instance_island)
 
 
 _OPERATOR_CLASSES = (
@@ -39,6 +42,7 @@ _OPERATOR_CLASSES = (
     operators.AC9_OT_mirror_pair_retopo_map,
     operators.AC9_OT_replace_mirror_island,
     operators.AC9_OT_symmetrize_island,
+    instance_island.AC9_OT_InstanceIsland,
     operators.AC9_OT_ghost_snap_move,
     operators.AC9_OT_uv_seam_snap_move,
     operators.AC9_OT_MatchSeams,
